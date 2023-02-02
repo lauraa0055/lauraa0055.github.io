@@ -1,0 +1,16 @@
+h3{
+	text-align: center;
+	padding: 20px;
+}
+
+li{
+	margin:50px;
+	padding: 10px;
+	text-align: center;
+	color: #778899;
+	border: 2px solid black;
+}
+
+li:hover{
+	color:blue;
+}
