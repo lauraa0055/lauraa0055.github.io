@@ -1,6 +1,6 @@
 Laura Arias
 
-Human-Computer Interaction Project/Lab1
+## Human-Computer Interaction Project/Lab1
 
 Task: Create a Todo-List
 
@@ -14,7 +14,8 @@ For now Target Audience = General Audience (anyone)
 
 	2. Unfilled (TBD what's considered not filled) = not done
 
-2/2/2023: 
+
+### 2/2/2023: 
 
 List and Title will be in the middle of the screen. Length of the divider/box should be enough to fill in one sentence.
 
@@ -24,6 +25,8 @@ Checkbox = square box/button
 
 Each List has a boarder indicating an empty task with faded out words saying:
 "Click Here to Start"
+
+Have a button at the bottom center indicating: "create new task"
 
 Each Task is seperate by at least one line of space
 
@@ -36,4 +39,15 @@ Each Task is seperate by at least one line of space
 
 3. HTML:
 	- Typing in a textbox
+
+
+### Resources (so far):
+
+- [W3 Schools](https://www.w3schools.com/)
+
+	- For HTML, CSS, and JavaScript
+
+- [BootStrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/#css)
+	
+	- For learning responsive website 
 
