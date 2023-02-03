@@ -4,13 +4,18 @@ h3{
 }
 
 li{
-	margin:50px;
-	padding: 10px;
+	margin: 30px;
+	padding: 60px;
 	text-align: center;
-	color: #778899;
-	border: 2px solid black;
+
 }
 
-li:hover{
-	color:blue;
+#add-Todolist{
+	margin: 70px;
 }
+
+#add-Todolist:hover{
+	background-color: green;
+}
+
+
