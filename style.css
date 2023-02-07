@@ -1,31 +1,33 @@
+
+body{
+	background-color: #FFE4E1;
+}
+
 h3{
 	text-align: center;
 	padding: 20px;
 }
 
-li{
-	margin: 30px;
-	padding: 60px;
-	text-align: center;
-
-}
 
 .card{
 
 	width: 30rem;
-	margin: 50px;
-
+	margin: 30px;
+	background-color: #FFB6C1;
 }
-
-
 
 
 #add-Todolist:hover{
-	background-color: green;
+	background-color: #191970;
+	color: white;
 }
 
 #add-Todolist{
-	margin: 50px;
+	padding: 10px;
+	text-align: center;
+	color: black;
+	background-color: #AFEEEE;
+	border-radius: 30px;
 }
 
 
