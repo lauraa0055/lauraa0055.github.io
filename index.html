@@ -25,10 +25,16 @@
 	<!-- Button: How a new list is created -->
 	<body>
 
+		<!-- Button to add a new todo list task -->
+		<div class = "add-Todolist-Button d-grid mx-auto col-6">
+			<button onclick = "addTask()" class = "btn btn-outline-secondary" type = "button" id = "add-Todolist">Add Task</button>
+		</div>
+
+
 		<div id = "collection-of-todo-lists">
 
 			<!-- This is me attempting the card style -->
-			<div class  = "card d-grid mx-auto col-6 bg-light" id = "todolist-with-card">
+			<div class  = "card d-grid mx-auto col-6" id = "todolist-with-card">
 				<!-- Card Body -->
 				<div class = "card-body">
 
@@ -51,11 +57,7 @@
 
 		</div>
 
-		<!-- Button to add a new todo list task -->
-		<div class = "add-Todolist-Button d-grid mx-auto col-6">
-			<button onclick = "addTask()" class = "btn btn-outline-secondary" type = "button" id = "add-Todolist">Add Task</button>
-		</div>
-
+		
 
 		<!-- Bootstrap JavaScript -->
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
