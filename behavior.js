@@ -1,7 +1,7 @@
 
 /*I would like to seperate each element into its own bucket*/
 
-/*Creates new Task by creatings a new card and appending it to
+/*Creates new Task by creating a new card and appending it to
 the bigger "todo-lists" div*/
 
 function addTask(){
