@@ -10,12 +10,22 @@ li{
 
 }
 
-#add-Todolist{
-	margin: 70px;
+.card{
+
+	width: 30rem;
+	margin: 50px;
+
 }
+
+
+
 
 #add-Todolist:hover{
 	background-color: green;
+}
+
+#add-Todolist{
+	margin: 50px;
 }
 
 
