@@ -45,6 +45,52 @@ Each Task is seperate by at least one line of space
 
 I will try implementing a card from the bootstrap website to make a more visually appealing todo list.
 
+#### **What I Have to Edit and Work On**
+
+**"Add Items":** 
+
+Will Change the description area to a few buttons:
+
+1. Add description
+
+2. Add Link (singular link for now)
+
+3. Add Alarm/Date in which the task is due
+
+
+**To the title of the task:** 
+
+1. Will add a star to the right to signify importance
+
+	a. the user can click on it and it will get filled
+
+		a. filled = important task
+
+		b. unfilled = not important task
+
+
+2. Add a change of color option to the left of the of the star
+
+
+**At the bottom:**
+- Will add a button "X" which deletes the task
+
+
+*later*
+
+- Will make a edit button that will bring a pop up window which then allows the user to change the color, time, etc. more conviniently instead of having everything cluttered onto the box
+
+- When the checkbox is ticked, the task is blurred out and put to the bottom of the list
+
+	- The user will still be able to uncheck the task, they just have to scroll down
+
+
+*later later*
+
+- Have a button at the top allowing the user to check on previous ticked off tasks so that they won't take up space at the bottom
+
+	- User will be allowed to uncheck the task in that window
+
 
 ### Resources (so far):
 
@@ -55,4 +101,24 @@ I will try implementing a card from the bootstrap website to make a more visuall
 - [BootStrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/#css)
 	
 	- For learning responsive website 
+
+
+### Color reference used in this page
+[**All Colors are taken from W3schools color reference Page**](https://www.w3schools.com/tags/ref_colornames.asp)
+
+**Card Colors:**
+- #FFB6C1: Light Pink ***(In Use)***
+
+
+**Page Background Colors:**
+- #FFE4E1: Misty Rose ***(In Use)***
+
+**Text Colors**
+- Black (Default)
+- White (When hovering over "Add Task" Button)
+
+**Button Colors**
+- #AFEEEE: Pale Turquoise ***(In Use)***
+- (When Hovered Over): #87CEFA: Light Sky Blue
+	- #191970: Midnight Blue ***(In Use)***
 
