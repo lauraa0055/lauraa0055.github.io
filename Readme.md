@@ -41,6 +41,11 @@ Each Task is seperate by at least one line of space
 	- Typing in a textbox
 
 
+### 2/7/23
+
+I will try implementing a card from the bootstrap website to make a more visually appealing todo list.
+
+
 ### Resources (so far):
 
 - [W3 Schools](https://www.w3schools.com/)
