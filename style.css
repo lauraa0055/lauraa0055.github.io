@@ -16,6 +16,10 @@ h3{
 	background-color: #FFB6C1;
 }
 
+#exit-button{
+	text-align: center;
+	margin: 10px;
+}
 
 #add-Todolist:hover{
 	background-color: #191970;
@@ -24,6 +28,7 @@ h3{
 
 #add-Todolist{
 	padding: 10px;
+	margin-bottom: 30px;
 	text-align: center;
 	color: black;
 	background-color: #AFEEEE;
