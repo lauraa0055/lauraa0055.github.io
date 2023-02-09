@@ -35,4 +35,12 @@ h3{
 	border-radius: 30px;
 }
 
+@media (max-width: 575.98px){
+	.card{
+		width: 18rem;
+	}
+}
+
+
+
 
