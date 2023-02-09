@@ -1,6 +1,22 @@
 
 /*I would like to seperate each element into its own bucket*/
 
+/*Deletes the task when the delete button is clicked*/
+
+/*Problem: No matter which task you delete, only the first one is deleted
+I think it has to do with the fact that they all have the same id so it causes
+JavaScript to always delete the first one*/
+
+function deleteTask(){
+
+	const elementToDelete = document.getElementById("todolist-with-card");
+
+	elementToDelete.remove();
+
+}
+
+
+
 /*Creates new Task by creating a new card and appending it to
 the bigger "todo-lists" div*/
 
@@ -26,7 +42,7 @@ and returns it*/
 
 function createNewCardDiv(){
 	const newDiv = document.createElement("div");
-	newDiv.setAttribute("class", "card d-grid mx-auto col-6 bg-light");
+	newDiv.setAttribute("class", "card d-grid mx-auto col-6");
 	newDiv.setAttribute("id", "todolist-with-card");
 
 	const cardBody = createNewCardDivBody();
@@ -51,9 +67,11 @@ function createNewCardDivBody(){
 
 	const input = createNewInputDiv();
 	const description = createDescriptionDiv();
+	const deleteButton = createDeleteButtonDiv();
 
 	newBodyDiv.appendChild(input);
 	newBodyDiv.appendChild(description);
+	newBodyDiv.appendChild(deleteButton);
 
 	return newBodyDiv;
 	
@@ -157,4 +175,45 @@ function createDescriptionTextArea(){
 	return descrptionAreaText;
 }
 
+/*Creating the div that will hold the delete button and appending the actual button to it
+Atttributes set:
+- id = "exit-button"
+*/
+
+function createDeleteButtonDiv(){
+
+	const newDeleteButtonDiv = document.createElement("div");
+
+	newDeleteButtonDiv.setAttribute("id", "exit-button");
+
+	const deleteButton = createDeleteButton();
+
+	newDeleteButtonDiv.appendChild(deleteButton);
+
+	return newDeleteButtonDiv;
+
+}
+
+
+/*Creating the delete button and returning it
+Attribute set:
+- onclick = "deleteTask()" 
+- type = "button" 
+- class = "btn btn-danger"*/
+
+function createDeleteButton(){
+
+	const newDeleteButton = document.createElement("button");
+
+	newDeleteButton.setAttribute("type", "button");
+
+	newDeleteButton.setAttribute("class", "btn btn-danger");
+
+	newDeleteButton.setAttribute("onclick", "deleteTask()");
+
+	newDeleteButton.innerHTML = "Delete";
+
+	return newDeleteButton;
+
+}
 
