@@ -31,7 +31,8 @@
 		</div>
 
 
-		<div id = "collection-of-todo-lists">
+		<!-- Attempting a Grid for the cards to make the tasks more visually appealing -->
+		<div class = "row row-cols-1 row-cols-md-2 g-4" id = "collection-of-todo-lists">
 
 			<!-- This is me attempting the card style -->
 			<div class  = "card d-grid mx-auto col-6" id = "todolist-with-card">
@@ -50,6 +51,10 @@
 
 					<div class = "input-group" id = "todo-list-description">
 						<textarea class = "form-control" placeholder="Description of Task"></textarea>
+					</div>
+
+					<div id = "exit-button">
+						<button onclick = "deleteTask()" type = "button" class = "btn btn-danger">Delete</button>
 					</div>
 
 				</div>
