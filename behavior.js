@@ -7,12 +7,21 @@
 I think it has to do with the fact that they all have the same id so it causes
 JavaScript to always delete the first one*/
 
+/*Solution: from w3schools: get every element with the same class
+go through them
+whenever one of them is clicked the function is ran
+where the parent of the button element (x3) which is basically the card div
+is then removed*/
+
 function deleteTask(){
+	var deleteButton = document.getElementsByClassName("btn btn-danger");
+	for(var i = 0; i < deleteButton.length; i++){
+		deleteButton[i].onclick = function(){
+			var elementToDelete = ((this.parentElement).parentElement).parentElement;	
+			elementToDelete.remove();
+		}
 
-	const elementToDelete = document.getElementById("todolist-with-card");
-
-	elementToDelete.remove();
-
+	}
 }
 
 
