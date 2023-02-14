@@ -121,4 +121,5 @@ Will Change the description area to a few buttons:
 - #AFEEEE: Pale Turquoise ***(In Use)***
 - (When Hovered Over): #87CEFA: Light Sky Blue
 	- #191970: Midnight Blue ***(In Use)***
+- #FFD700: When hovering over the prioratize button ***(In Use)*** 
 
