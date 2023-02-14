@@ -16,6 +16,31 @@ h3{
 	background-color: #FFB6C1;
 }
 
+#colorInput{
+	margin-left: 45%;
+}
+
+#addDateDiv{
+	text-align: center;
+	padding: 10px;
+	margin-top: 10px;
+}
+
+#priorityButton{
+	background-color: black;
+	color: white;
+}
+
+#priorityButton:hover{
+	background-color: #FFD700;
+	color: black;
+}
+
+#Add-subtaskDiv{
+	margin-top: 20px;
+	text-align: center;
+}
+
 #exit-button{
 	text-align: center;
 	margin: 10px;
@@ -38,8 +63,7 @@ h3{
 @media (min-width: 767.98px){
 
 	.sticky-top{
-		max-width: 273px;
-		border-radius: 30px;	
+		max-width: 273px;	
 	}
 	
 }
@@ -50,7 +74,6 @@ h3{
 	}
 	.sticky-sm-top{
 		width: auto;
-		border-radius: 0px;
 	}
 }
 
