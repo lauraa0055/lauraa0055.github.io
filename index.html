@@ -45,13 +45,29 @@
 						<div class = "input-group-text">
 							<input class = "form-check-input mt-0" type = "checkbox">
 						</div>
-						<input class = "form-control" type = "text" placeholder = "Name of Task">	
-					</div>
+						<input class = "form-control" type = "text" placeholder = "Name of Task">
 
+						<button class="btn btn-outline-secondary" type="button" id="priorityButton" title = "Prioratize this task?">Prioratize?</button>	
+
+					</div>
 
 					<div class = "input-group" id = "todo-list-description">
 						<textarea class = "form-control" placeholder="Description of Task"></textarea>
 					</div>
+
+					<div>
+						<input type="color" class="form-control form-control-color" id="colorInput" value="#563d7c" title="Choose your color">
+					</div>
+
+
+					<div id = "Add-subtaskDiv">
+						<button type = "button" class="btn btn-primary">Add Subtask</button>
+					</div>
+
+					<div id = "addDateDiv">
+						<button type = "button" class = "btn btn-dark" id = "addDueDate">Add Due Date</button>
+					</div>
+
 
 					<div id = "exit-button">
 						<button onclick = "deleteTask()" type = "button" class = "btn btn-danger">Delete</button>
