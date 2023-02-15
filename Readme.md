@@ -122,4 +122,5 @@ Will Change the description area to a few buttons:
 - (When Hovered Over): #87CEFA: Light Sky Blue
 	- #191970: Midnight Blue ***(In Use)***
 - #FFD700: When hovering over the prioratize button ***(In Use)*** 
+- #FFEBCD: When hovering over add description button
 
