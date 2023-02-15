@@ -17,13 +17,27 @@ h3{
 }
 
 #colorInput{
-	margin-left: 45%;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
-#addDateDiv{
+#button-divs{
+	margin-top: 20px;
+	margin-bottom: 10px;
 	text-align: center;
-	padding: 10px;
-	margin-top: 10px;
+}
+
+#add-description{
+	background-color: white;
+}
+
+#add-description:hover{
+	background-color: #FFEBCD;
+}
+
+#addDueDate:hover{
+	background-color: #FFE4E1;
+	color: black;
 }
 
 #priorityButton{
