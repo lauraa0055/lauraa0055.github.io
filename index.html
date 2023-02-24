@@ -27,7 +27,7 @@
 
 		<!-- Button to add a new todo list task -->
 		<div class = "add-Todolist-Button d-grid mx-auto col-6 sticky-top sticky-sm-top sticky-md-top">
-			<button onclick = "addTask()" class = "btn btn-outline-secondary" type = "button" id = "add-Todolist">Add Task</button>
+			<button onclick = "addTask()" class = "btn btn-info" type = "button" id = "add-Todolist">Add Task</button>
 		</div>
 
 
@@ -43,13 +43,36 @@
 					<!-- Aka: Checkbox and Text -->
 					<div class = "input-group mb-3">
 						<div class = "input-group-text">
-							<input class = "form-check-input mt-0" type = "checkbox">
+							<input class = "form-check-input mt-0" type = "checkbox" onclick = "checkSub()" id = "checkboxBig">
 						</div>
 						<input class = "form-control" type = "text" placeholder = "Name of Task">
 
-						<button class="btn btn-outline-secondary" type="button" id="priorityButton" title = "Prioratize this task?">Prioratize?</button>	
+						<button class="btn btn-outline-secondary" type="button" id="priorityButton" title = "Prioratize this task?" onclick="prioratizeTask()">Prioratize?</button>	
 
 					</div>
+
+					  <!-- <input type="date" id="birthday"> -->
+
+				
+					<div id = "duedate" class = "alert alert-warning"
+					style="display: none;">
+
+						<input type = "date">
+						<button onclick = "deleteDate()" type = "button" class = "btn btn-danger">Delete</button>
+									
+					</div>
+					
+
+					<!--Div to use later--->
+					<div id = "subtask-list">
+						<ul class = "list-group"></ul>
+					</div>
+
+
+					<div id = "description"></div>
+
+					<ul class = "list-group">
+					</ul>
 
 					<!-- <div class = "input-group" id = "todo-list-description">
 						<textarea class = "form-control" placeholder="Description of Task"></textarea>
@@ -57,9 +80,9 @@
 
 					<div id= "button-divs" class ="btn-group" role = "group">
 						
-							<button type = "button" class="btn btn-primary" id="add-subtask-btn">Add Subtask</button>
+							<button type = "button" class="btn btn-primary" id="add-subtask-btn" onclick="createSubtask()">Add Subtask</button>
 
-							<button type = "button" class = "btn btn-dark" id = "addDueDate">Add Due Date</button>
+							<button type = "button" class = "btn btn-dark" id = "addDueDate" onclick="displayDueDate()">Add Due Date</button>
 
 							<button type = "button" class = "btn" id = "add-description">Add Task Description</button>
 							
