@@ -101,11 +101,6 @@ function displayDueDate(){
 	}
 }
 
-function changeColor(){
-	var color = document.getElementById("colorInput").value;
-	var bodyOfCard = document.getElementsByClassName("card d-grid mx-auto col-6");
-	bodyOfCard[0].style.backgroundColor = color;
-}
 
 //priority button
 var prioratized = false;
@@ -150,7 +145,7 @@ function createSubtask(){
 			var list = document.createElement("li");
 			list.setAttribute("class","list-group-item");
 			list.appendChild(subtask());
-			addSub[i-1].appendChild(list);
+			this.parentElement.parentElement.children[2].appendChild(list);
 		}
 	}
 
@@ -241,11 +236,13 @@ function createNewCardDivBody(){
 
 	const input = createNewInputDiv();
 	const date = createDateDiv();
+	const sub = createSubtaskList();
 	const options = createButtonGroupDiv()
 	const deleteButton = createDeleteButtonDiv();
 
 	newBodyDiv.appendChild(input);
 	newBodyDiv.appendChild(date);
+	newBodyDiv.appendChild(sub);
 	newBodyDiv.appendChild(options);
 	newBodyDiv.appendChild(deleteButton);
 
@@ -364,8 +361,6 @@ function createButtonGroupDiv(){
 
 	newGroupBtnDiv.appendChild(createAddDateBtn());
 
-	newGroupBtnDiv.appendChild(createAddDescriptionBtn());
-
 	return newGroupBtnDiv;
 
 
@@ -420,6 +415,7 @@ function createAddSubBtn(){
 	subtaskBtn.setAttribute("type", "button");
 	subtaskBtn.setAttribute("class", "btn btn-primary");
 	subtaskBtn.setAttribute("id", "add-subtask-btn");
+	subtaskBtn.setAttribute("onclick", "createSubtask()");
 	subtaskBtn.innerHTML = "Add Subtask";
 
 	return subtaskBtn;
@@ -437,17 +433,17 @@ function createAddDateBtn(){
 
 }
 
-function createAddDescriptionBtn(){
-	const descriptionBtn = document.createElement("button");
-	descriptionBtn.setAttribute("type", "button");
-	descriptionBtn.setAttribute("class", "btn");
-	descriptionBtn.setAttribute("id", "add-description");
-	descriptionBtn.innerHTML = "Add Task Description";
+function createSubtaskList(){
+	const subtTaskDiv = document.createElement("div");
+	subtTaskDiv.setAttribute("id", "subtask-list");
 
-	return descriptionBtn;
+	const ulList = document.createElement("ul");
+	ulList.setAttribute("class", "list-group");
 
+	subtTaskDiv.appendChild(ulList);
+
+	return subtTaskDiv;
 }
-
 
 
 /*creates the subtask*/
