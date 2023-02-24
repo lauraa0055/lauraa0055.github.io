@@ -41,6 +41,7 @@ function deleteSubTask(){
 
 }
 
+
 function deleteDate(){
 	var addD = document.getElementsByClassName("alert alert-warning");
 	var deleteButton = document.getElementsByClassName("btn btn-danger");
@@ -100,6 +101,11 @@ function displayDueDate(){
 	}
 }
 
+function changeColor(){
+	var color = document.getElementById("colorInput").value;
+	var bodyOfCard = document.getElementsByClassName("card d-grid mx-auto col-6");
+	bodyOfCard[0].style.backgroundColor = color;
+}
 
 //priority button
 var prioratized = false;
@@ -338,36 +344,6 @@ function createPriorityBtn(){
 	return newPriorityButton;
 }
 
-/*creating the seperate div for task description
-Attribute set:
- - class = "input-group"
- - id = "todo-list-description"
-the textarea is appened to the div
-and returns it*/
-function createDescriptionDiv(){
-	const descrptionDiv = document.createElement("div");
-	descrptionDiv.setAttribute("class", "input-group");
-	descrptionDiv.setAttribute("id", "todo-list-description");
-
-	//creates the text area
-	const textArea = createDescriptionTextArea();
-
-	//appends the two and returns it
-	return descrptionDiv.appendChild(textArea);
-}
-
-/*creating the actual text area for description
-Attribute set:
- - class = "form-control"
- - placeholder = "Description of Task"
-and returns it*/
-function createDescriptionTextArea(){
-	const descrptionAreaText = document.createElement("textarea");
-	descrptionAreaText.setAttribute("class", "form-control");
-	descrptionAreaText.setAttribute("placeholder", "Description of Task");
-	
-	return descrptionAreaText;
-}
 
 /*Creating the div that will hold all the buttons
 Attributes set:
