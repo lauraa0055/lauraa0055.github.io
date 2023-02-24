@@ -1,5 +1,7 @@
 
 /*I would like to seperate each element into its own bucket*/
+
+
 /*This first part focuses on the functions of the buttons and such*/
 
 
@@ -26,6 +28,158 @@ function deleteTask(){
 
 	}
 }
+
+function deleteSubTask(){
+	var deleteButton = document.getElementsByClassName("btn btn-danger");
+	for(var i = 0; i < deleteButton.length; i++){
+		deleteButton[i].onclick = function(){
+			var elementToDelete = (this.parentElement).parentElement;	
+			elementToDelete.remove();
+		}
+
+	}
+
+}
+
+function deleteDate(){
+	var addD = document.getElementsByClassName("alert alert-warning");
+	var deleteButton = document.getElementsByClassName("btn btn-danger");
+	var addDB = document.getElementsByClassName("btn btn-dark");
+	for(var i = 0; i < deleteButton.length; i++){
+		deleteButton[i].onclick = function(){
+			var elementToDelete = this.parentElement;
+			elementToDelete.style.display = "none"	;
+
+			for(var i = 0; i < addDB.length; i++){
+				addDB[i].style.display = "block";
+			}		
+		}
+
+	}
+}
+
+/*Creatives description div and appends it to the card body.
+Will also get rid of the "Add description" button.*/
+
+/*Creates a div for the due date and appends it to the card body
+If the description was made beforehand it will be moved above the description.
+*/
+function createDueDate(){
+
+	var addD = document.getElementsByClassName("alert alert-warning");
+	var addDB = document.getElementsByClassName("btn btn-dark");
+
+	for(var i = 0; i < addDB.length; i++){
+		addDB[i].onclick = function(){
+
+					var date = document.createElement("input");
+					date.setAttribute("type", "date");
+					addD[i-1].appendChild(date);
+					var delB = createDeleteButton();
+					delB.setAttribute("onclick", "displayDueDate()");
+					addD[i-1].appendChild(delB);
+			}
+		}
+
+}
+
+function displayDueDate(){
+	var addD = document.getElementsByClassName("alert alert-warning");
+	var addDB = document.getElementsByClassName("btn btn-dark");
+
+	for(var i = 0; i < addDB.length; i++){
+		addDB[i].onclick = function(){
+			var alerDiv = this.parentElement.parentElement.children[1];
+			if(alerDiv.style.display === "none"){
+				alerDiv.style.display = "block";
+
+				//the button
+					this.style.display = "none";
+			}
+		}
+	}
+}
+
+
+//priority button
+var prioratized = false;
+function prioratizeTask(){
+	var priorityButton = document.getElementsByClassName("btn btn-outline-secondary");
+	for(var i = 0; i < priorityButton.length; i++){
+	priorityButton[i].onclick = function(){
+		if(prioratized == false){
+		
+			this.innerHTML = "PRIORATIZED";
+			this.style.backgroundColor = "#DC143C";
+			this.style.color = "white";
+			prioratized = true;
+
+		}else{
+
+				this.innerHTML = "Prioratize?";
+				this.style.backgroundColor = "Black";
+				this.style.color = "white";
+
+				prioratized = false;
+			}
+		}
+	}
+
+}
+
+
+
+
+/*Creates a div for the subtasks and appends them.
+If description was made it will be moved above it.
+If due date was made it will be below the due date
+First checks if there has been a div done already, if not, create one*/
+
+function createSubtask(){
+	
+	var addSub = document.getElementsByClassName("list-group");
+	var addSubB = document.getElementsByClassName("btn btn-primary");
+	for(var i = 0; i < addSubB.length; i++){
+		addSubB[i].onclick = function(){
+			var list = document.createElement("li");
+			list.setAttribute("class","list-group-item");
+			list.appendChild(subtask());
+			addSub[i-1].appendChild(list);
+		}
+	}
+
+}
+
+/*Prioratize button will change its color from black to yellow
+and it will change the hover to be the reversed. Inner html = "prioratized"
+Hovering over = "unprioratized?"
+
+Further functions: make the card/task move up the top
+If there is already a button that was prioratized beforehand, it will be placed top+n, where n is the number of
+tasks already prioratized*/
+function checkSub(){
+	console.log("box was checked");
+	var checkBox = document.getElementsByClassName("form-check-input mt-0");
+
+	for(var i = 0; i < checkBox.length; i++){
+		//checkBox[i].onclick = function(){
+		console.log(checkBox[i]);
+
+			if(checkBox[i].checked == true){
+				console.log("true");
+				checkBox[i].parentElement.parentElement.parentElement.parentElement.style.backgroundColor = "green";
+				//checkAllSubTaskBox();
+			
+			} else{
+				//console.log(false);
+				checkBox[i].parentElement.parentElement.parentElement.parentElement.style.backgroundColor = "#FFB6C1";	
+			}
+			
+		//}
+	}	
+}
+
+
 
 /*-----------*/
 /*This part is primarily for creating*/
@@ -80,10 +234,12 @@ function createNewCardDivBody(){
 	newBodyDiv.setAttribute("class", "card-body");
 
 	const input = createNewInputDiv();
+	const date = createDateDiv();
 	const options = createButtonGroupDiv()
 	const deleteButton = createDeleteButtonDiv();
 
 	newBodyDiv.appendChild(input);
+	newBodyDiv.appendChild(date);
 	newBodyDiv.appendChild(options);
 	newBodyDiv.appendChild(deleteButton);
 
@@ -141,6 +297,8 @@ function createCheckBox(){
 	const newBox = document.createElement("input");
 	newBox.setAttribute("class", "form-check-input mt-0");
 	newBox.setAttribute("type", "checkbox");
+	newBox.setAttribute("id", "checkboxBig");
+	newBox.setAttribute("onclick", "checkSub()");
 
 	return newBox;
 }
@@ -170,9 +328,10 @@ Attributes set:
 
 function createPriorityBtn(){
 	const newPriorityButton = document.createElement("button");
-	newPriorityButton.setAttribute("class", "btn btn-outline");
+	newPriorityButton.setAttribute("class", "btn btn-outline-secondary");
 	newPriorityButton.setAttribute("type", "button");
 	newPriorityButton.setAttribute("id", "priorityButton");
+	newPriorityButton.setAttribute("onclick", "prioratizeTask()");
 	newPriorityButton.setAttribute("title", "Prioratize this task?");
 	newPriorityButton.innerHTML = "Prioratize?";
 
@@ -236,6 +395,29 @@ function createButtonGroupDiv(){
 
 }
 
+function createDateDiv(){
+	const newdiv = document.createElement("div");
+	newdiv.setAttribute("id", "duedate");
+	newdiv.setAttribute("class", "alert alert-warning");
+	newdiv.setAttribute("style", "display: none;");
+
+
+	const date = document.createElement("input");
+	date.setAttribute("type", "date");
+
+	const buttonDel = document.createElement("button");
+	buttonDel.setAttribute("onclick", "deleteDate()");
+	buttonDel.setAttribute("type", "button");
+	buttonDel.setAttribute("class", "btn btn-danger");
+	buttonDel.innerHTML = "Delete"
+
+	newdiv.appendChild(date);
+	newdiv.appendChild(buttonDel);
+
+	return newdiv;
+
+}
+
 /*creating all of the buttons that will be put into the div
 Add subtask:
 Attributes set:
@@ -271,6 +453,7 @@ function createAddDateBtn(){
 	const dueDateBtn = document.createElement("button");
 	dueDateBtn.setAttribute("type", "button");
 	dueDateBtn.setAttribute("class", "btn btn-dark");
+	dueDateBtn.setAttribute("onclick", "displayDueDate()")
 	dueDateBtn.setAttribute("id", "addDueDate");
 	dueDateBtn.innerHTML = "Add Due Date";
 
@@ -286,6 +469,27 @@ function createAddDescriptionBtn(){
 	descriptionBtn.innerHTML = "Add Task Description";
 
 	return descriptionBtn;
+
+}
+
+
+
+/*creates the subtask*/
+function subtask(){
+
+	const inputDiv = document.createElement("div");
+	inputDiv.setAttribute("class", "input-group mb-3");
+
+	const taskName = createTitle();
+	var checkBox = createNewCheckboxDiv();
+
+	inputDiv.appendChild(checkBox);
+	inputDiv.appendChild(taskName);
+	var delB = createDeleteButton();
+	delB.setAttribute("onclick", "deleteSubTask()");
+	inputDiv.appendChild(delB);
+
+	return inputDiv;
 
 }
 
